@@ -1,10 +1,15 @@
-# Bài 3 - Tính diện tích tam giác
-# Học sinh: Ngô Minh Hiếu
-# Lớp: THCS 19A3
-# STT: 21
-# Ngôn ngữ: Python 3
+def gcd(a,b):
+    a,b=abs(a),abs(b)
+    while b:
+        a,b=b,a%b
+    return a
 
-day = float(input("Nhập độ dài cạnh đáy (cm): "))
-cao = float(input("Nhập chiều cao (cm): "))
-dien_tich = 0.5 * day * cao
-print(f"Diện tích tam giác: {dien_tich:.2f} cm²")
+num=int(input("Nhap tu: "))
+den=int(input("Nhap mau: "))
+g=gcd(num,den)
+num//=g
+den//=g
+if den<0:
+    num=-num
+    den=-den
+print(f"{num}/{den}")

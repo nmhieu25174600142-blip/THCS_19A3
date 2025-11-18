@@ -1,9 +1,11 @@
-# Bài 4 - Chuyển đổi VND sang USD
-# Học sinh: Ngô Minh Hiếu
-# Lớp: THCS 19A3
-# STT: 21
-# Ngôn ngữ: Python 3
-
-vnd = float(input("Nhập số tiền (VND): "))
-usd = vnd / 24500
-print(f"Số tiền tương đương: {usd:.2f} USD")
+n=int(input("Nhap n: "))
+if n > 1:
+    sieve=[True]*n
+    sieve[0]=sieve[1]=False
+    for i in range(2,int(n**0.5)+1):
+        if sieve[i]:
+            for j in range(i*i,n,i):
+                sieve[j]=False
+    print([i for i,v in enumerate(sieve) if v])
+else:
+    print([])

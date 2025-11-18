@@ -1,16 +1,22 @@
-# Bài 5 - Tính lãi đơn
-# Học sinh: Ngô Minh Hiếu
-# Lớp: THCS 19A3
-# STT: 21
-# Ngôn ngữ: Python 3
+def S1(n): return n*(n+1)//2
+def S2(n):
+    if n<=1: return 1
+    r=1
+    for i in range(1,n): r*=i
+    return r
+def S3(n):
+    s=0
+    for i in range(1,n+1):
+        s+=((-1)**(i+1))/i
+    return s
+def S4(n):
+    s=0
+    for k in range(n+1):
+        s+=k/(k+2)
+    return s
 
-tien_gui = float(input("Nhập số tiền gửi ban đầu (VND): "))
-lai_suat = float(input("Nhập lãi suất năm (%): ")) / 100
-
-lai_1_thang = tien_gui * lai_suat * (1/12)
-lai_2_quy = tien_gui * lai_suat * (2/4)
-lai_3_nam = tien_gui * lai_suat * 3
-
-print(f"Lãi sau 1 tháng: {lai_1_thang:.2f} VND")
-print(f"Lãi sau 2 quý: {lai_2_quy:.2f} VND")
-print(f"Lãi sau 3 năm: {lai_3_nam:.2f} VND")
+n=int(input("Nhap n: "))
+print("S1 =",S1(n))
+print("S2 =",S2(n))
+print("S3 =",S3(n))
+print("S4 =",S4(n))
